@@ -5,13 +5,15 @@
             "name": "client",
             "image": "tommygdev/multi-container-client-prod",
             "hostname": "client",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "server",
             "image": "tommygdev/multi-container-server-prod",
             "hostname": "api",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "worker": "worker",
@@ -23,6 +25,7 @@
             "worker": "nginx",
             "image": "tommygdev/multi-container-nginx-prod",
             "essential": true,
+            "memory": 128,
             "portMapping": [
                 {
                     "hostPort": 80,
