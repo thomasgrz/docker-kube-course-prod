@@ -16,13 +16,13 @@
             "memory": 128
         },
         {
-            "worker": "worker",
+            "name": "worker",
             "image": "tommygdev/multi-container-worker-prod",
             "hostname": "worker",
             "essential": false
         },
         {
-            "worker": "nginx",
+            "name": "nginx",
             "image": "tommygdev/multi-container-nginx-prod",
             "essential": true,
             "memory": 128,
