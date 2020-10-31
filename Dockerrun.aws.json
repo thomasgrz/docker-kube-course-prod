@@ -1,0 +1,35 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "tommygdev/multi-container-client-prod",
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "tommygdev/multi-container-server-prod",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "worker": "worker",
+            "image": "tommygdev/multi-container-worker-prod",
+            "hostname": "worker",
+            "essential": false
+        },
+        {
+            "worker": "nginx",
+            "image": "tommygdev/multi-container-nginx-prod",
+            "essential": true,
+            "portMapping": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["client", "server"]
+        }
+    ]
+}

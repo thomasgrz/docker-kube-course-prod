@@ -20,3 +20,15 @@ after_success:
     - docker push tommygdev/multi-container-nginx-prod
     - docker push tommygdev/multi-container-server-prod
     - docker push tommygdev/multi-container-worker-prod
+
+deploy:
+    provider: elasticbeanstalk
+    region: us-east-1
+    app: 'multi-docker'
+    env: MultiDocker-env
+    bucket_name: elasticbeanstalk-us-east-1-605065733753
+    bucker_path: docker-multi
+    on:
+        branch: main
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
