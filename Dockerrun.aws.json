@@ -19,6 +19,7 @@
             "name": "worker",
             "image": "tommygdev/multi-container-worker-prod",
             "hostname": "worker",
+            "memory":128,
             "essential": false
         },
         {
