@@ -27,7 +27,7 @@
             "image": "tommygdev/multi-container-nginx-prod",
             "essential": true,
             "memory": 128,
-            "portMapping": [
+            "portMappings": [
                 {
                     "hostPort": 80,
                     "containerPort": 80
