@@ -12,7 +12,7 @@
             "name": "server",
             "image": "tommygdev/multi-container-server-prod",
             "hostname": "api",
-            "essential": false,
+            "essential": true,
             "memory": 128
         },
         {
